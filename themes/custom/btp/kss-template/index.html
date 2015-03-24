@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>citc Living Styleguide</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+
+  <meta name="viewport" content="width=device-width, minimal-ui">
+
+  <link rel="stylesheet" href="public/kss.css">
+  <link rel="stylesheet" href="../css/styleguide.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" type="text/csss" href="//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div>
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-styleguide-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="./index.html">UCSF citc Styleguide</a>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-styleguide-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">0.0: Overview</a></li>
+        {{#eachRoot}}
+          <li><a href="section-{{reference}}.html">{{reference}}.0: {{header}}</a></li>
+        {{/eachRoot}}
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="col-sm-12">
+      <div role="main">
+        <article>
+          {{#if overview}}
+            {{html overview}}
+          {{else}}
+
+            {{!
+              Find each section, in order.
+              If there's no markup or modifiers supplied, use a Markdown-only
+              layout instead.
+
+              The "root" element comes first in this loop, and can be detected using
+              the "#whenDepth 1" block as seen below.
+            }}
+
+            {{#eachSection rootNumber}}
+              {{#whenDepth 1}}
+                <h1 class="kss-title"><span class="kss-ref">{{ reference }}.0</span> - {{ header }}</h1>
+              {{else}}
+               <section class="kss-depth-{{ refDepth }}">
+                <h1 class="kss-title"><span class="kss-ref">{{ reference }}</span> - {{ header }}</h1>
+              {{/whenDepth}}
+                {{#ifAny markup modifiers}}
+                  <div class="kss-box lead">{{html description}}</div>
+                    <section class="kss-mod-list">
+                      <article class="panel panel-default">
+                        <header class="kss-mod-desc-group panel-heading">
+                          <h4 class="kss-mod-desc panel-title">Default styling</h4>
+                        </header>
+                        <div class="kss-mod-example panel-body">
+                          {{modifierMarkup}}
+                        </div>
+                      </article>
+
+
+                    {{#eachModifier}}
+                      <article class="panel panel-default">
+                        <header class="kss-mod-desc-group panel-heading">
+                          <h4 class="panel-title">{{name}}</h4>
+                          <p>
+                          {{html description}}
+                          </p>
+                        </header>
+                        <div class="kss-mod-example panel-body">
+
+
+                          {{modifierMarkup}}
+                        </div>
+                      </article>
+                    {{/eachModifier}}
+                  </section>
+                    <div class="kss-markup">
+                      <pre><code class="language-markup">{{markup}}</code></pre>
+                    </div>
+                {{else}}
+                    {{#if description}}
+                      {{html description}}
+                    {{/if}}
+                {{/ifAny}}
+              {{#whenDepth 1}} {{else}}
+                </section>
+              {{/whenDepth}}
+            {{/eachSection}}
+          {{/if}}
+        </article>
+      </div>
+    </div>
+  </div>
+  <!-- SCRIPTS -->
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.3.1/holder.js"></script>
+  <script src="public/less.js"></script>
+  <script src="public/kss.js"></script>
+</div>
+</body>
+</html>
