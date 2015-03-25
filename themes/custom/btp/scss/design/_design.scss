@@ -1,0 +1,126 @@
+#page-wrap {
+  background-color: $body-bg-color;
+}
+
+
+// ! Header
+
+header#navbar {
+  border: none;
+  background-color: #fff;
+  margin-bottom: 0;
+  
+  .container {
+    position: relative;
+    height: 210px;
+    background: url('../images/swoosh.svg') no-repeat;
+    background-position: left 110px;
+    
+    // Make sure we clip the image and get a hard edge on it.
+    background-size: 200%;
+    overflow: hidden;
+
+    @media(min-width: $screen-xs) {
+      height: 230px;
+      background-size: 150%;
+    }
+  
+    @media(min-width: $screen-sm) {
+      height: 255px;
+      background-size: 105%;
+      background-position: left 110px;
+    }
+    
+    @media(min-width: $screen-md) {
+      height: 275px;
+    }
+  }
+  
+  .navbar-header {
+    padding-left: 1em;
+    padding-top: 1em;
+    
+    @media(min-width: $screen-sm) {
+      padding-left: 2em;
+    }
+
+    @media(min-width: $screen-md) {
+      padding-left: 3em;
+    }
+    
+    a {
+      display: block;
+      background: url('../images/btp-logo.svg') no-repeat bottom left;
+      background-size: contain;
+      width: 185px;
+      height: 105px;
+      @extend .text-hide;
+    }
+  }
+  
+  #main-menu {
+    @media(min-width: $screen-sm) {
+      position: absolute;
+      bottom: 40px;
+      right: 0;
+      
+      nav {
+        padding-top: 1em;
+      }
+    }
+  }
+  
+  #search-block {
+    float: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @media(min-width: $screen-sm) {
+      bottom: auto;
+      left: auto;
+      top: 0px;
+    }
+    
+    form {
+      padding-top: 2em;
+      @extend .col-xs-12;
+      @extend .col-sm-6;
+      @extend .col-sm-push-6;
+      @extend .col-md-3;
+      @extend .col-md-push-9;
+    }
+  }
+}
+
+
+// ! Main content
+
+.main-container {
+  background-color: #fff;
+  
+  @media(min-width: $screen-xs) {
+    #main-content-wrap,
+    #sidebar-second-wrap {
+      position: relative;
+      top: -30px;
+    }
+  }
+}
+
+
+// ! Sidebar
+#sidebar-second-wrap {
+  @media(min-width: $screen-sm) {
+    // Get rid of the white stripe down the side of the sidebar.
+    padding-right: 0;    
+  }
+
+  .region-sidebar-second {
+    padding: 2em;
+    background-color: $sidbar-bg-color;
+  }
+}
+
+
+// ! Footer

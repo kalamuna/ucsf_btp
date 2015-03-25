@@ -1,0 +1,62 @@
+$body-bg-color: #b4b9bf;
+$sidbar-bg-color: #f0f1f2;
+
+// Colors
+//////////////////////////
+$c-teal:          #18a3ac;
+$c-orange:        #f48022;
+$c-navy:          #374d6d;
+
+$c-teal-light:    #5eb9bb;
+$c-navy-light:    #4a6894;
+$c-magenta:       #ec1848;
+
+
+// Primary color overrides
+$brand-primary:   $c-teal;
+$brand-success:   $c-teal-light;
+$brand-info:      $c-navy-light;
+$brand-warning:   $c-orange;
+$brand-danger:    $c-magenta;
+
+$link-color:      $c-teal;
+$link-hover-color:$c-teal-light;
+
+$text-color:      #4d4d4d;
+
+
+// Typography
+//////////////////////////
+$font-family-sans-serif: "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+$font-size-base:    16px;
+$line-height-base:  1.6;
+
+$h1-font-size: $font-size-base * 3.5;
+$h2-font-size: $font-size-base * 2.6;
+$h3-font-size: $font-size-base * 2.3;
+$h4-font-size: $font-size-base * 2;
+$h5-font-size: $font-size-base * .8;
+$h6-font-size: $font-size-base * .733;
+
+// Buttons
+//////////////////////////
+$btn-primary-color:              $brand-primary !default;
+$btn-primary-bg:                 #fff !default;
+$btn-primary-border:             $brand-primary !default;
+
+$btn-success-color:              $brand-success !default;
+$btn-success-bg:                 #fff !default;
+$btn-success-border:             $brand-success !default;
+
+$btn-info-color:                 $brand-info !default;
+$btn-info-bg:                    #fff !default;
+$btn-info-border:                $brand-info !default;
+
+$btn-warning-color:              $brand-warning !default;
+$btn-warning-bg:                 #fff !default;
+$btn-warning-border:             $brand-warning !default;
+
+$btn-danger-color:               $brand-danger !default;
+$btn-danger-bg:                  #fff !default;
+$btn-danger-border:              $brand-danger !default;

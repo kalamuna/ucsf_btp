@@ -1,0 +1,7 @@
+@media print {
+  // Bootstrap prints link urls in parenthesis after each link which is nice but
+  // really jams up the page with cruft.
+  a[href]:after {
+    content: '';
+  }
+}
