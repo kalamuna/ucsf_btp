@@ -100,17 +100,14 @@ header#navbar {
   background-color: #fff;
   
   @media(min-width: $screen-xs) {
-    #main-content-wrap,
-    #sidebar-second-wrap {
-      position: relative;
-      top: -30px;
-    }
+    position: relative;
+    top: -30px;
   }
 }
 
 
 // ! Sidebar
-#sidebar-second-wrap {
+#sidebar-second-wrap {  
   @media(min-width: $screen-sm) {
     // Get rid of the white stripe down the side of the sidebar.
     padding-right: 0;    
@@ -119,6 +116,43 @@ header#navbar {
   .region-sidebar-second {
     padding: 2em;
     background-color: $sidbar-bg-color;
+  }
+  
+  .logos {
+    margin-top: 2em;
+    
+    ul {
+      margin: 0;
+      padding: 0;
+      @extend .clearfix;
+      
+      li {
+        list-style: none;
+        float: left;
+        
+        &.bixby {
+          width: 60%;
+          padding-right: 5%;
+          margin-right: 5%;
+          border-right: 1px solid $text-color;
+        }
+  
+        &.ucsf {
+          width: 30%;
+        }
+
+        a {
+          img {
+            width: 100%;
+            @extend .img-responsive;
+          }
+          
+          span {
+            @extend .sr-only;
+          }
+        }
+      }
+    }
   }
 }
 

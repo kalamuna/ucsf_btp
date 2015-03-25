@@ -229,7 +229,7 @@ figure {
 img {
   vertical-align: middle; }
 
-.img-responsive {
+.img-responsive, #sidebar-second-wrap .logos ul li a img {
   display: block;
   width: 100% \9;
   max-width: 100%;
@@ -261,7 +261,7 @@ hr {
   border: 0;
   border-top: 1px solid #eeeeee; }
 
-.sr-only {
+.sr-only, #sidebar-second-wrap .logos ul li a span {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -3754,10 +3754,10 @@ button.close {
   .carousel-indicators {
     bottom: 20px; } }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, #sidebar-second-wrap .logos ul:before, .clearfix:after, #sidebar-second-wrap .logos ul:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, #sidebar-second-wrap .logos ul:after {
   clear: both; }
 
 .center-block {
@@ -4062,7 +4062,7 @@ header#navbar {
 .main-container {
   background-color: #fff; }
   @media (min-width: 480px) {
-    .main-container #main-content-wrap, .main-container #sidebar-second-wrap {
+    .main-container {
       position: relative;
       top: -30px; } }
 
@@ -4072,3 +4072,20 @@ header#navbar {
 #sidebar-second-wrap .region-sidebar-second {
   padding: 2em;
   background-color: #f0f1f2; }
+#sidebar-second-wrap .logos {
+  margin-top: 2em; }
+  #sidebar-second-wrap .logos ul {
+    margin: 0;
+    padding: 0; }
+    #sidebar-second-wrap .logos ul li {
+      list-style: none;
+      float: left; }
+      #sidebar-second-wrap .logos ul li.bixby {
+        width: 60%;
+        padding-right: 5%;
+        margin-right: 5%;
+        border-right: 1px solid #4d4d4d; }
+      #sidebar-second-wrap .logos ul li.ucsf {
+        width: 30%; }
+      #sidebar-second-wrap .logos ul li a img {
+        width: 100%; }

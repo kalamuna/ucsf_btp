@@ -37,4 +37,52 @@ function btp_preprocess_page(&$vars) {
   
   // Change the size of the content column.
   $vars['content_column_class'] = ' class="col-sm-8"';
+  
+  // Add the Bixby and UCSF logos into the bottom of the sidebar.
+  $weight = 0;
+  $children = element_children($vars['page']['sidebar_second']);
+  foreach ($vars['page']['sidebar_second'] as $name => $block) {
+    if (in_array($name, $children) && $block['#weight'] > $weight) {
+      $weight = $block['#weight'];
+    }
+  }
+  
+  $bixby_text = t('Bixby Center for Global Reproductive Health');
+  $bixby_image = theme_image(array(
+    'path' => path_to_theme() . '/images/bixby-logo.svg',
+    'alt' => $bixby_text,
+    'attributes' => array(), // How does this bug still exist?!?!
+  ));
+  $bixby_link = l($bixby_image . '<span>' . $bixby_text . '</span>', 'http://bixbycenter.ucsf.edu', array(
+    'html' => TRUE,
+    'external' => TRUE,
+  ));
+
+  $ucsf_text = t('UCSF - University of Calafornia San Francisco');
+  $ucsf_image = theme_image(array(
+    'path' => path_to_theme() . '/images/ucsf-logo.svg',
+    'alt' => $ucsf_text,
+    'attributes' => array(), // How does this bug still exist?!?!
+  ));
+  $ucsf_link = l($ucsf_image . '<span>' . $ucsf_text . '</span>', 'http://www.ucsf.edu', array(
+    'html' => TRUE,
+    'external' => TRUE,
+  ));
+  
+  $vars['page']['sidebar_second']['logos'] = array(
+    '#prefix' => '<div class="logos">',
+    '#suffix' => '</div>',
+    '#theme' => 'item_list',
+    '#weight' => $weight + 1, 
+    '#items' => array(
+      array(
+        'data' => $bixby_link,
+        'class' => array('bixby'),
+      ),
+      array(
+        'data' => $ucsf_link,
+        'class' => array('ucsf'),
+      ),
+    ),
+  );
 }

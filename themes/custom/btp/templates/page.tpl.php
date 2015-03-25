@@ -160,11 +160,10 @@
         <?php print render($page['content']); ?>
       </section>
   
-      <?php if (!empty($page['sidebar_second'])): ?>
-        <aside id="sidebar-second-wrap"  class="col-sm-4" role="complementary">
-          <?php print render($page['sidebar_second']); ?>
-        </aside>  <!-- /#sidebar-second -->
-      <?php endif; ?>
+      <aside id="sidebar-second-wrap"  class="col-sm-4" role="complementary">
+        <?php print render($page['sidebar_second']); ?>
+        </div>
+      </aside>  <!-- /#sidebar-second -->
   
     </div>
   </div>
