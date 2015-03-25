@@ -131,12 +131,12 @@
     <div class="row">
   
       <?php if (!empty($page['sidebar_first'])): ?>
-        <aside id="sidebar-first-wrap" class="col-sm-4" role="complementary">
+        <aside id="sidebar-first-wrap" class="col-sm-4" role="complementary" data-mh="content">
           <?php print render($page['sidebar_first']); ?>
         </aside>  <!-- /#sidebar-first -->
       <?php endif; ?>
   
-      <section id="main-content-wrap"<?php print $content_column_class; ?>>
+      <section id="main-content-wrap"<?php print $content_column_class; ?> data-mh="content">
         <?php if (!empty($page['highlighted'])): ?>
           <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
         <?php endif; ?>
@@ -160,7 +160,7 @@
         <?php print render($page['content']); ?>
       </section>
   
-      <aside id="sidebar-second-wrap"  class="col-sm-4" role="complementary">
+      <aside id="sidebar-second-wrap"  class="col-sm-4" role="complementary" data-mh="content">
         <?php print render($page['sidebar_second']); ?>
         </div>
       </aside>  <!-- /#sidebar-second -->

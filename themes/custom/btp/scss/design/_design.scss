@@ -1,5 +1,23 @@
+$content-offset: -30px;
+
 #page-wrap {
   background-color: $body-bg-color;
+  position: relative;
+  
+  // Larger than xs
+  @media(min-width: $screen-xs) {
+    // Cover the gap at the bottom left by positioning the content area up.
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: abs($content-offset);
+      width: 100%;
+      background-color: $c-white;
+    }
+  }
 }
 
 
@@ -7,7 +25,7 @@
 
 header#navbar {
   border: none;
-  background-color: #fff;
+  background-color: $c-white;
   margin-bottom: 0;
   
   .container {
@@ -20,17 +38,20 @@ header#navbar {
     background-size: 200%;
     overflow: hidden;
 
+    // Larger than xs
     @media(min-width: $screen-xs) {
       height: 230px;
       background-size: 150%;
     }
   
+    // Larger than sm
     @media(min-width: $screen-sm) {
       height: 255px;
       background-size: 105%;
       background-position: left 110px;
     }
     
+    // Larger than md
     @media(min-width: $screen-md) {
       height: 275px;
     }
@@ -40,10 +61,12 @@ header#navbar {
     padding-left: 1em;
     padding-top: 1em;
     
+    // Larger than sm
     @media(min-width: $screen-sm) {
       padding-left: 2em;
     }
 
+    // Larger than md
     @media(min-width: $screen-md) {
       padding-left: 3em;
     }
@@ -59,6 +82,7 @@ header#navbar {
   }
   
   #main-menu {
+    // Larger than sm
     @media(min-width: $screen-sm) {
       position: absolute;
       bottom: 40px;
@@ -76,6 +100,7 @@ header#navbar {
     bottom: 0;
     left: 0;
 
+    // Larger than sm
     @media(min-width: $screen-sm) {
       bottom: auto;
       left: auto;
@@ -95,19 +120,21 @@ header#navbar {
 
 
 // ! Main content
-
 .main-container {
-  background-color: #fff;
-  
+  background-color: $c-white;
+    
+  // Larger than xs
   @media(min-width: $screen-xs) {
     position: relative;
-    top: -30px;
+    top: $content-offset;
   }
 }
 
 
 // ! Sidebar
+$logo-offset: 90px;
 #sidebar-second-wrap {  
+  // Larger than sm
   @media(min-width: $screen-sm) {
     // Get rid of the white stripe down the side of the sidebar.
     padding-right: 0;    
@@ -116,9 +143,11 @@ header#navbar {
   .region-sidebar-second {
     padding: 2em;
     background-color: $sidbar-bg-color;
+    height: 100%; // #sidebar-second-wrap height will come from matchHeight js.
   }
   
   .logos {
+    width: 100%;
     margin-top: 2em;
     
     ul {
@@ -158,3 +187,5 @@ header#navbar {
 
 
 // ! Footer
+body > footer {
+}
