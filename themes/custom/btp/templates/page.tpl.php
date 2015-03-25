@@ -162,7 +162,6 @@
   
       <aside id="sidebar-second-wrap"  class="col-sm-4" role="complementary" data-mh="content">
         <?php print render($page['sidebar_second']); ?>
-        </div>
       </aside>  <!-- /#sidebar-second -->
   
     </div>

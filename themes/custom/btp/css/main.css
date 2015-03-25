@@ -602,22 +602,22 @@ pre {
   .container-fluid:after {
     clear: both; }
 
-.row {
+.row, .region-footer {
   margin-left: -15px;
   margin-right: -15px; }
-  .row:before, .row:after {
+  .row:before, .region-footer:before, .row:after, .region-footer:after {
     content: " ";
     display: table; }
-  .row:after {
+  .row:after, .region-footer:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, header#navbar #search-block form, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, header#navbar #search-block form, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, header#navbar #search-block form, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .region-footer #block-menu-footer, .col-md-3, header#navbar #search-block form, .col-lg-3, .col-xs-4, .col-sm-4, .region-footer #block-ucsftemplate-tweaks-footer-copyright, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .region-footer #block-ucsftemplate-tweaks-footer-contact, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, header#navbar #search-block form, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, header#navbar #search-block form, .region-footer #block-ucsftemplate-tweaks-footer-contact, .region-footer #block-ucsftemplate-tweaks-footer-copyright, .region-footer #block-menu-footer, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, header#navbar #search-block form {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, header#navbar #search-block form, .region-footer #block-ucsftemplate-tweaks-footer-contact, .region-footer #block-ucsftemplate-tweaks-footer-copyright, .region-footer #block-menu-footer {
   float: left; }
 
 .col-xs-1 {
@@ -653,7 +653,7 @@ pre {
 .col-xs-11 {
   width: 91.6666666667%; }
 
-.col-xs-12, header#navbar #search-block form {
+.col-xs-12, header#navbar #search-block form, .region-footer #block-ucsftemplate-tweaks-footer-contact, .region-footer #block-ucsftemplate-tweaks-footer-copyright, .region-footer #block-menu-footer {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -774,17 +774,17 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, header#navbar #search-block form, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .region-footer #block-menu-footer, .col-sm-4, .region-footer #block-ucsftemplate-tweaks-footer-copyright, .col-sm-5, .region-footer #block-ucsftemplate-tweaks-footer-contact, .col-sm-6, header#navbar #search-block form, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left; }
   .col-sm-1 {
     width: 8.3333333333%; }
   .col-sm-2 {
     width: 16.6666666667%; }
-  .col-sm-3 {
+  .col-sm-3, .region-footer #block-menu-footer {
     width: 25%; }
-  .col-sm-4 {
+  .col-sm-4, .region-footer #block-ucsftemplate-tweaks-footer-copyright {
     width: 33.3333333333%; }
-  .col-sm-5 {
+  .col-sm-5, .region-footer #block-ucsftemplate-tweaks-footer-contact {
     width: 41.6666666667%; }
   .col-sm-6, header#navbar #search-block form {
     width: 50%; }
@@ -3987,6 +3987,7 @@ a {
   color: #18a3ac; }
 
 #page-wrap > footer, #page-wrap > footer a {
+  font-size: 14px;
   color: #fff; }
 
 a:hover {
@@ -4001,16 +4002,6 @@ p {
 #page-wrap {
   background-color: #b4b9bf;
   position: relative; }
-  @media (min-width: 480px) {
-    #page-wrap:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 30px;
-      width: 100%;
-      background-color: #fff; } }
 
 header#navbar {
   border: none;
@@ -4103,3 +4094,50 @@ header#navbar {
       #sidebar-second-wrap .logos ul li a img {
         width: 100%; }
 
+.region-footer {
+  padding-bottom: 2em; }
+  .region-footer #block-ucsftemplate-tweaks-footer-contact {
+    margin-bottom: 2em; }
+    .region-footer #block-ucsftemplate-tweaks-footer-contact h2 {
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center; }
+      @media (min-width: 768px) {
+        .region-footer #block-ucsftemplate-tweaks-footer-contact h2 {
+          margin-top: 0;
+          text-align: left; } }
+    .region-footer #block-ucsftemplate-tweaks-footer-contact .footer-contact-address, .region-footer #block-ucsftemplate-tweaks-footer-contact .footer-contact-phonefax {
+      float: left;
+      width: 50%; }
+  .region-footer #block-ucsftemplate-tweaks-footer-copyright {
+    margin-bottom: 2em;
+    text-align: center; }
+    @media (min-width: 768px) {
+      .region-footer #block-ucsftemplate-tweaks-footer-copyright {
+        text-align: left; } }
+  .region-footer #block-menu-footer {
+    margin-bottom: 2em; }
+    .region-footer #block-menu-footer .nav li {
+      text-align: center; }
+      @media (min-width: 768px) {
+        .region-footer #block-menu-footer .nav li {
+          float: left;
+          padding-left: 5%;
+          text-align: left; }
+          .region-footer #block-menu-footer .nav li:first-child {
+            padding-right: 5%;
+            padding-left: 0;
+            border-right: 1px solid #fff; } }
+      .region-footer #block-menu-footer .nav li a {
+        padding: 0;
+        background-color: transparent; }
+        .region-footer #block-menu-footer .nav li a:hover {
+          background-color: transparent; }
+        @media (max-width: 768px) {
+          .region-footer #block-menu-footer .nav li a {
+            display: block;
+            padding: 5px;
+            margin-bottom: 10px;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 5px; } }
