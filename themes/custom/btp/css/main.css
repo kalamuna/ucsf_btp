@@ -4012,8 +4012,7 @@ header#navbar {
     height: 210px;
     background: url('../images/swoosh.svg') no-repeat;
     background-position: left 110px;
-    background-size: 200%;
-    overflow: hidden; }
+    background-size: 200%; }
     @media (min-width: 480px) {
       header#navbar .container {
         height: 230px;
@@ -4041,13 +4040,57 @@ header#navbar {
       background-size: contain;
       width: 185px;
       height: 105px; }
-  @media (min-width: 768px) {
-    header#navbar #main-menu {
-      position: absolute;
-      bottom: 40px;
-      right: 0; }
-      header#navbar #main-menu nav {
-        padding-top: 1em; } }
+    header#navbar .navbar-header .navbar-toggle:not(.collapsed) {
+      border-color: #dbdde0;
+      background-color: #dbdde0; }
+  header#navbar #main-menu {
+    background-color: #dbdde0;
+    border: none;
+    position: relative;
+    z-index: 999; }
+    header#navbar #main-menu.in {
+      top: -68px; }
+    header#navbar #main-menu nav li a {
+      color: #4d4d4d; }
+      header#navbar #main-menu nav li a:hover, header#navbar #main-menu nav li a:focus {
+        background-color: rgba(255, 255, 255, 0.3); }
+    header#navbar #main-menu nav li.active a, header#navbar #main-menu nav li.active-trail.dropdown > a {
+      color: #fff;
+      background-color: #f48022; }
+    header#navbar #main-menu nav li.expanded ul.dropdown-menu {
+      background-color: rgba(255, 255, 255, 0.2); }
+    header#navbar #main-menu nav > ul > li {
+      border-bottom: 1px solid #fff; }
+    @media (min-width: 768px) {
+      header#navbar #main-menu {
+        background-color: #fff;
+        position: absolute;
+        bottom: 40px;
+        right: 0; }
+        header#navbar #main-menu nav {
+          padding-top: 1em; }
+          header#navbar #main-menu nav li a {
+            padding-top: 5px;
+            padding-bottom: 5px; }
+            header#navbar #main-menu nav li a:hover {
+              background-color: #dbdde0; }
+          header#navbar #main-menu nav li.open a {
+            background-color: #dbdde0; }
+          header#navbar #main-menu nav li.open .dropdown-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.2); }
+          header#navbar #main-menu nav li.active-trail > a, header#navbar #main-menu nav li a.active {
+            background-color: #f48022;
+            color: #fff !important; }
+            header#navbar #main-menu nav li.active-trail > a:hover, header#navbar #main-menu nav li a.active:hover {
+              background-color: rgba(244, 128, 34, 0.9) !important; }
+          header#navbar #main-menu nav li.expanded ul.dropdown-menu {
+            background-color: #dbdde0; }
+            header#navbar #main-menu nav li.expanded ul.dropdown-menu li {
+              border-bottom: 1px solid #fff; }
+              header#navbar #main-menu nav li.expanded ul.dropdown-menu li:last-child {
+                border: none; }
+              header#navbar #main-menu nav li.expanded ul.dropdown-menu li a {
+                color: #18a3ac; } }
   header#navbar #search-block {
     float: none;
     position: absolute;

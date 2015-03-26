@@ -14,15 +14,6 @@
     }
   };
   
-  /**
-   * The right sidebar is always on so we need to make sure it's the same height
-   * as the content region despite what's inside of it.
-   */
-  btp.sidebarMatchHeight = function(){
-    //debugger;
-    //$('.main-container .row > *').matchHeight();
-  }
-    
   // makes sure onresize doesnt get called too frequently
   // improves page performance
   // http://davidwalsh.name/javascript-debounce-function

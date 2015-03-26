@@ -4,6 +4,8 @@ module.exports = function(grunt) {
 
   var themeJs = [
         'bower_components/matchHeight/jquery.matchHeight.js',
+        'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js',
+        'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js',
         'js/btp.js'
       ];
 

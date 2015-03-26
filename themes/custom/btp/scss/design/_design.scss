@@ -18,25 +18,22 @@ header#navbar {
     height: 210px;
     background: url('../images/swoosh.svg') no-repeat;
     background-position: left 110px;
-    
-    // Make sure we clip the image and get a hard edge on it.
     background-size: 200%;
-    overflow: hidden;
 
-    // Larger than xs
+    // Larger than xs.
     @media(min-width: $screen-xs) {
       height: 230px;
       background-size: 150%;
     }
   
-    // Larger than sm
+    // Larger than sm.
     @media(min-width: $screen-sm) {
       height: 255px;
       background-size: 105%;
       background-position: left 110px;
     }
     
-    // Larger than md
+    // Larger than md.
     @media(min-width: $screen-md) {
       height: 275px;
     }
@@ -46,12 +43,12 @@ header#navbar {
     padding-left: 1em;
     padding-top: 1em;
     
-    // Larger than sm
+    // Larger than sm.
     @media(min-width: $screen-sm) {
       padding-left: 2em;
     }
 
-    // Larger than md
+    // Larger than md.
     @media(min-width: $screen-md) {
       padding-left: 3em;
     }
@@ -64,17 +61,111 @@ header#navbar {
       height: 105px;
       @extend .text-hide;
     }
+    
+    // Menu toggle.
+    .navbar-toggle:not(.collapsed) {
+      border-color: $menu-color;
+      background-color: $menu-color;
+    }
   }
   
+  // ! Main menu
   #main-menu {
-    // Larger than sm
+    background-color: $menu-color;
+    border: none;
+    position: relative;
+    z-index: 999;
+    
+    &.in {
+      top: -68px;
+    }
+    
+    nav {
+      li {
+        
+        a {
+          color: $text-color;
+          
+          &:hover,
+          &:focus {
+            background-color: rgba(255,255,255,0.3);
+          }
+        }
+
+        &.active a,
+        &.active-trail.dropdown > a {
+          color: $c-white;
+          background-color: $c-orange;
+        }
+        
+        &.expanded {
+          ul.dropdown-menu {
+            background-color: rgba(255,255,255,0.2);
+          }
+        }
+      }
+      
+      > ul > li {
+        border-bottom: 1px solid $c-white;
+      }
+    }
+    
+    // Larger than sm.
     @media(min-width: $screen-sm) {
+      background-color: $c-white;
       position: absolute;
       bottom: 40px;
       right: 0;
       
       nav {
         padding-top: 1em;
+        
+        li {
+          a {
+            padding-top: 5px;
+            padding-bottom: 5px; 
+            
+            &:hover {
+              background-color: $menu-color;
+            }           
+          }
+          
+          &.open a {
+            background-color: $menu-color;
+          }
+
+          &.open .dropdown-menu a:hover {            
+            background-color: rgba(255,255,255,0.2);
+          }
+          
+          &.active-trail > a,
+          a.active {
+            background-color: $c-orange;
+            color: $c-white !important;
+            
+            &:hover {
+              background-color: rgba(244, 128, 34, 0.9) !important;
+            }
+          }
+          
+          &.expanded {
+            ul.dropdown-menu {
+              background-color: $menu-color;
+              
+              li {
+                border-bottom: 1px solid $c-white;
+                
+                &:last-child {
+                  border: none;
+                } 
+                
+                a {
+                  color: $c-teal;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -85,7 +176,7 @@ header#navbar {
     bottom: 0;
     left: 0;
 
-    // Larger than sm
+    // Larger than sm.
     @media(min-width: $screen-sm) {
       bottom: auto;
       left: auto;
@@ -108,7 +199,7 @@ header#navbar {
 .main-container {
   background-color: $c-white;
     
-  // Larger than xs
+  // Larger than xs.
   @media(min-width: $screen-xs) {
     position: relative;
     top: $content-offset;
@@ -119,7 +210,7 @@ header#navbar {
 // ! Sidebar
 $logo-offset: 90px;
 #sidebar-second-wrap {  
-  // Larger than sm
+  // Larger than sm.
   @media(min-width: $screen-sm) {
     // Get rid of the white stripe down the side of the sidebar.
     padding-right: 0;    
