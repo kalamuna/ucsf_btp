@@ -24,6 +24,9 @@ function btp_preprocess_html(&$vars) {
  * Implements hook_preprocess_page
  */ 
 function btp_preprocess_page(&$vars) {
+  // Add fontawesome from the CDN.
+  drupal_add_css('//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', 'external');
+  
   // For some reason the navbar has a container class which conflicts with the
   // div directly inside it which also has a container class. Let's remove it.
   foreach ($vars['navbar_classes_array'] as $i => $val) {
@@ -34,11 +37,18 @@ function btp_preprocess_page(&$vars) {
   
   // Build the search block for printing directly in the page template.
   $vars['search_block'] = module_invoke('search', 'block_view', 'search');
-  
+
   // Change the size of the content column.
   $vars['content_column_class'] = ' class="col-sm-8"';
   
+  
   // Add the Bixby and UCSF logos into the bottom of the sidebar.
+  btp_add_sidebar_logos($vars);
+}
+/**
+ * Add the Bixby and UCSF logos into the bottom of the sidebar
+ */
+function btp_add_sidebar_logos($vars){
   $weight = 0;
   $children = element_children($vars['page']['sidebar_second']);
   foreach ($vars['page']['sidebar_second'] as $name => $block) {
@@ -85,4 +95,28 @@ function btp_preprocess_page(&$vars) {
       ),
     ),
   );
+}
+
+/**
+ * Theme function implementation for bootstrap_search_form_wrapper.
+ *
+ * Overriding bootstrap_bootstrap_search_form_wrapper to change the search 
+ * button into a magnifying glass.
+ */
+function btp_bootstrap_search_form_wrapper($variables) {
+  $output = '<div class="input-group">';
+  $output .= $variables['element']['#children'];
+  $output .= '<span class="input-group-btn">';
+  $output .= '<button type="submit" class="btn btn-default">';
+  // We can be sure that the font icons exist in CDN.
+  if (theme_get_setting('bootstrap_cdn')) {
+    $output .= _bootstrap_icon('search');
+  }
+  else {
+    $output .= '<i class="fa fa-search"></i><span class="sr-only">Search</span>';
+  }
+  $output .= '</button>';
+  $output .= '</span>';
+  $output .= '</div>';
+  return $output;
 }

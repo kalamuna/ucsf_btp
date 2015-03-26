@@ -205,6 +205,19 @@ header#navbar {
       @extend .col-md-3;
       @extend .col-md-push-9;
     }
+    
+    input {
+      border-radius: 0px;
+      border-right: none;
+      box-shadow: none;
+    }
+    
+    .input-group-btn {
+      button {
+        border-radius: 0px;
+        color: $c-teal;
+      }
+    }
   }
 }
 

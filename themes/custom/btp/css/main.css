@@ -4107,6 +4107,13 @@ header#navbar {
         top: 0px; } }
     header#navbar #search-block form {
       padding-top: 2em; }
+    header#navbar #search-block input {
+      border-radius: 0px;
+      border-right: none;
+      box-shadow: none; }
+    header#navbar #search-block .input-group-btn button {
+      border-radius: 0px;
+      color: #18a3ac; }
 
 .main-container {
   background-color: #fff; }
