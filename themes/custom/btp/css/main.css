@@ -4063,7 +4063,7 @@ header#navbar {
       border-bottom: 1px solid #fff; }
     @media (min-width: 768px) {
       header#navbar #main-menu {
-        background-color: #fff;
+        background-color: transparent;
         position: absolute;
         bottom: 40px;
         right: 0; }
@@ -4091,6 +4091,10 @@ header#navbar {
                 border: none; }
               header#navbar #main-menu nav li.expanded ul.dropdown-menu li a {
                 color: #18a3ac; } }
+    @media (min-width: 768px) and (max-width: 992px) {
+      header#navbar #main-menu nav li a {
+        padding-left: 13px;
+        padding-right: 13px; } }
   header#navbar #search-block {
     float: none;
     position: absolute;
@@ -4106,7 +4110,7 @@ header#navbar {
 
 .main-container {
   background-color: #fff; }
-  @media (min-width: 480px) {
+  @media (min-width: 768px) {
     .main-container {
       position: relative;
       top: -30px; } }

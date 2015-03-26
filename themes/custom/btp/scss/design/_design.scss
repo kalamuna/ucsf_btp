@@ -112,7 +112,7 @@ header#navbar {
     
     // Larger than sm.
     @media(min-width: $screen-sm) {
-      background-color: $c-white;
+      background-color: transparent;
       position: absolute;
       bottom: 40px;
       right: 0;
@@ -168,8 +168,22 @@ header#navbar {
         }
       }
     }
+    
+    // Between these two sizes we need to adjust the menu to make sure it 
+    // doesn't spill over onto two lines and break the layout.
+    @media(min-width: $screen-sm) and (max-width: $screen-md) {
+      nav {
+        li {
+          a {
+            padding-left: 13px;
+            padding-right: 13px;
+          }
+        }
+      }
+    }
   }
   
+  // ! Search block
   #search-block {
     float: none;
     position: absolute;
@@ -200,7 +214,7 @@ header#navbar {
   background-color: $c-white;
     
   // Larger than xs.
-  @media(min-width: $screen-xs) {
+  @media(min-width: $screen-sm) {
     position: relative;
     top: $content-offset;
   }
