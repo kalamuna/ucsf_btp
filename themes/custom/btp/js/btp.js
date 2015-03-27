@@ -1,7 +1,6 @@
 (function ( btp, $, window, undefined) {
 
   btp.initialize = function(context,settings){
-    btp.sidebarMatchHeight();
   }
 
   // let's get busy!

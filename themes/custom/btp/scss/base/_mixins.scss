@@ -1,0 +1,10 @@
+@mixin home-cta($color, $image) {
+  background-color: $color;
+  background-image: url('../images/front-#{$image}.svg');
+  background-repeat: no-repeat;
+  background-position: center 30px;
+  
+  &:hover {
+    background-color: lighten($color, 10);
+  }
+}

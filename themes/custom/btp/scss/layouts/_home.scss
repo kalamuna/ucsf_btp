@@ -112,3 +112,14 @@
     }
   }
 }
+
+.drop-cap {
+  @extend %h3;
+  color: $c-orange;
+  line-height: $font-size-base;
+}
+
+#home-ctas {
+  margin-top: 40px;
+  @extend %home-ctas;
+}
