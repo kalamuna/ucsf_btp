@@ -1,7 +1,61 @@
-@media print {
-  // Bootstrap prints link urls in parenthesis after each link which is nice but
-  // really jams up the page with cruft.
-  a[href]:after {
-    content: '';
+%quote-style-1 {
+  background-color: $c-white;
+  padding: 15px;
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  blockquote {
+    border: none;
+    margin: 0;
+    padding: 0;
+    
+    footer {
+      text-align: right;
+    }
+  }
+  
+  p {
+    font-style: italic;
+    font-weight: 700;
+    font-size: $font-size-base;
+  }
+}
+
+%news-list {
+  ul {
+    margin: 0;
+    padding: 0;
+    
+    li {
+      $news-border: 2px dotted $body-bg-color;
+      list-style: none;
+      border-top: $news-border;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      @extend .clearfix;
+      
+      &:last-child {
+        border-bottom: $news-border;
+      }
+      
+      .views-field-field-image {
+        float: left;
+        width: 27%;
+      }
+      
+      .views-field-title {
+        float: left;
+        width: 73%;
+        line-height: 1.2;
+        
+        a {
+          display: block;
+          margin-top: 5px;
+          color: $text-color;
+        }
+      }
+    }
   }
 }

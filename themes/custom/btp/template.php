@@ -48,7 +48,7 @@ function btp_preprocess_page(&$vars) {
 /**
  * Add the Bixby and UCSF logos into the bottom of the sidebar
  */
-function btp_add_sidebar_logos($vars){
+function btp_add_sidebar_logos(&$vars){
   $weight = 0;
   $children = element_children($vars['page']['sidebar_second']);
   foreach ($vars['page']['sidebar_second'] as $name => $block) {

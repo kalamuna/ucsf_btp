@@ -1,0 +1,17 @@
+#block-block-1 {
+  @extend %quote-style-1;
+}
+
+.view-news {
+  position: relative;
+  
+  .view-content {
+    @extend %news-list;
+  }
+  
+  .more-link {
+    position: absolute;
+    top: -35px;
+    right: 0;
+  }
+}
