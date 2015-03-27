@@ -373,3 +373,14 @@ $logo-offset: 90px;
     }
   }
 }
+
+// ! Prebuilt styles
+.quote-style-1 {
+  @extend %quote-style-1;
+}
+
+.news-list {
+  @extend %news-list;
+}
+
+
