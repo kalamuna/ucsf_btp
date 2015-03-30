@@ -374,6 +374,24 @@ $logo-offset: 90px;
   }
 }
 
+.not-front .field-collection-item-field-btp-sidebar-callout {
+  @extend %quote-style-2;
+}
+
+.view-sidebar-callouts {
+  .view-content {
+    ul {
+      @extend %reset-list;
+      
+      li:first-of-type {
+        .field-collection-item-field-btp-sidebar-callout > h2 {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
 // ! Prebuilt styles
 .quote-style-1 {
   @extend %quote-style-1;

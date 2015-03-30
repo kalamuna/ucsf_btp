@@ -3944,21 +3944,26 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-#block-block-1, .quote-style-1 {
+.front .field-collection-item-field-btp-sidebar-callout, .quote-style-1 {
   background-color: #fff;
   padding: 15px; }
-  #block-block-1 h2, .quote-style-1 h2 {
-    margin-top: 0; }
-  #block-block-1 blockquote, .quote-style-1 blockquote {
+  .front .field-collection-item-field-btp-sidebar-callout blockquote, .quote-style-1 blockquote {
     border: none;
     margin: 0;
     padding: 0; }
-    #block-block-1 blockquote footer, .quote-style-1 blockquote footer {
+    .front .field-collection-item-field-btp-sidebar-callout blockquote footer, .quote-style-1 blockquote footer {
       text-align: right; }
-  #block-block-1 p, .quote-style-1 p {
+  .front .field-collection-item-field-btp-sidebar-callout p, .quote-style-1 p {
     font-style: italic;
     font-weight: 700;
     font-size: 16px; }
+
+.not-front .field-collection-item-field-btp-sidebar-callout blockquote {
+  border-left: 3px solid #f48022; }
+.not-front .field-collection-item-field-btp-sidebar-callout p {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px; }
 
 .view-news .view-content ul, .news-list ul {
   margin: 0;
@@ -4012,6 +4017,14 @@ button.close {
   background-position: center 30px; }
   #home-ctas .cta:nth-child(3) a:hover {
     background-color: #f69c53; }
+
+.view-sidebar-callouts .view-content ul {
+  margin: 0;
+  padding: 0; }
+  .view-sidebar-callouts .view-content ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
 
 body {
   font-family: "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -4334,4 +4347,7 @@ header#navbar {
             color: #fff;
             border: 1px solid #fff;
             border-radius: 5px; } }
+
+.view-sidebar-callouts .view-content ul li:first-of-type .field-collection-item-field-btp-sidebar-callout > h2 {
+  margin-top: 0; }
 

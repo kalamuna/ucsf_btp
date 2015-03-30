@@ -120,3 +120,39 @@ function btp_bootstrap_search_form_wrapper($variables) {
   $output .= '</div>';
   return $output;
 }
+
+/**
+ * Implements hook_preprocess_entity.
+ */
+function btp_preprocess_entity(&$vars, $hook){
+  // Run entity-type-specific preprocess functions for the opt-in list of types.
+  global $theme_key;
+  $types = array('field_collection_item');
+  if (in_array($vars['entity_type'], $types)) {
+    $function = $theme_key . '_preprocess_' . $vars['entity_type'];
+    if (function_exists($function)) {
+      $function($vars, $hook);
+    } 
+  }
+}
+
+/**
+ * Implements hook_preprocess_entity.
+ */
+function btp_preprocess_field_collection_item(&$vars){
+  if ($vars['elements']['#bundle'] == 'field_btp_sidebar_callout') {
+    // Set up variables for template that just have the fields values so we can
+    // avoid all the markup. 
+    $fields = array(
+      'callout_title' => 'field_btp_sidebar_callout_title',
+      'callout_text' => 'field_btp_sidebar_callout_text',
+      'callout_attr' => 'field_btp_sidebar_callout_attr',
+    );
+    
+    foreach ($fields as $var_name => $field_name) {
+      if (isset($vars[$field_name])) {
+        $vars[$var_name] = $vars[$field_name][0]['safe_value'];
+      }
+    }
+  }
+}

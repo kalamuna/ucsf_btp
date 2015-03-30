@@ -1,11 +1,7 @@
 %quote-style-1 {
   background-color: $c-white;
   padding: 15px;
-  
-  h2 {
-    margin-top: 0;
-  }
-  
+
   blockquote {
     border: none;
     margin: 0;
@@ -14,6 +10,18 @@
     footer {
       text-align: right;
     }
+  }
+  
+  p {
+    font-style: italic;
+    font-weight: 700;
+    font-size: $font-size-base;
+  }
+}
+
+%quote-style-2 {
+  blockquote {
+    border-left: 3px solid $c-orange;
   }
   
   p {
@@ -91,4 +99,17 @@
       @include home-cta($c-orange, 'book');
     }
   }
+}
+
+
+%reset-list {
+  margin: 0;
+  padding: 0;
+  
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
 }
