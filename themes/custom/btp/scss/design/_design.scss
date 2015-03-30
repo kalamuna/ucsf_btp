@@ -82,7 +82,7 @@ header#navbar {
     
     nav {
       li {
-        
+        position: relative;
         a {
           color: $menu-text-color;
           
@@ -90,15 +90,53 @@ header#navbar {
           &:focus {
             background-color: rgba(255,255,255,0.3);
           }
+          
+          &.dropdown {
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 25px;
+            padding-top: 3px;
+            padding-left: 5px;
+            background-color: transparent;
+            
+            &:hover {
+              background-color: rgba(255,255,255,0.3);
+              
+              .caret {
+                border-top-color: $c-orange;
+              }
+            }
+          }
         }
 
         &.active a,
         &.active-trail.dropdown > a {
           color: $c-white;
           background-color: $c-orange;
+          
+          &.dropdown {
+            background-color: transparent;
+          }
+        }
+        
+        // Make sure active carets get a hover color. 
+        &.active-trail {  
+          a.dropdown:hover {
+            .caret {
+              border-top-color: $menu-text-color;
+            }
+          }
         }
         
         &.expanded {
+          // Make sure sub nav parents have space for the caret.
+          a:first-child {
+            padding-right: 25px;
+          }
+          
           ul.dropdown-menu {
             background-color: rgba(255,255,255,0.2);
           }
@@ -125,7 +163,8 @@ header#navbar {
             padding-top: 5px;
             padding-bottom: 5px; 
             
-            &:hover {
+            &:hover,
+            &.hover { // In some circumstances js is adding this class.
               background-color: $menu-color;
             }           
           }

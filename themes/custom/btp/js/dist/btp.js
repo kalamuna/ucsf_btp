@@ -549,21 +549,22 @@
 }(jQuery);
 
 (function ( btp, $, window, undefined) {
-
-  btp.initialize = function(context,settings){
-  }
-
-  // let's get busy!
   Drupal.behaviors.btp = {
     attach: function (context, settings) {
-      // Called on domready, but not in ajax attach events.
-      if (context == '[object HTMLDocument]'){
+      $('body').once(function(){
         btp.initialize(context, settings);
-      }
+      });
     }
   };
   
-  // makes sure onresize doesnt get called too frequently
+  /**
+   * Kick off.
+   */
+  btp.initialize = function(context, settings){
+    btp.menuHoverfix();
+  };
+
+  // Makes sure onresize doesnt get called too frequently
   // improves page performance
   // http://davidwalsh.name/javascript-debounce-function
   btp.debounce = function(func, wait, immediate) {
@@ -582,7 +583,23 @@
   };
 
   btp.onResize = btp.debounce( function(){
-    // code here…
   }, 30 );
+  
+  /**
+   * Hovering over the drop down caret stops the hover on the main anchor with the stlying
+   */
+  btp.menuHoverfix = function(context, settings){
+    $('#navbar ul.navbar-nav li.expanded a.dropdown').on({
+      mouseenter: menuHoverToggle,
+      mouseleave: menuHoverToggle,
+    });
+  };
+  
+  /**
+   * 
+   */
+  function menuHoverToggle(e){
+    $(this).siblings('a[data-target]').toggleClass('hover');
+  }
 
 })( window.btp = window.btp || {}, jQuery, window, undefined );

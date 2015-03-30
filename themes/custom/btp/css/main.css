@@ -4202,15 +4202,37 @@ header#navbar {
     z-index: 999; }
     header#navbar #main-menu.in {
       top: -68px; }
-    header#navbar #main-menu nav li a {
-      color: #052049; }
-      header#navbar #main-menu nav li a:hover, header#navbar #main-menu nav li a:focus {
-        background-color: rgba(255, 255, 255, 0.3); }
-    header#navbar #main-menu nav li.active a, header#navbar #main-menu nav li.active-trail.dropdown > a {
-      color: #fff;
-      background-color: #f48022; }
-    header#navbar #main-menu nav li.expanded ul.dropdown-menu {
-      background-color: rgba(255, 255, 255, 0.2); }
+    header#navbar #main-menu nav li {
+      position: relative; }
+      header#navbar #main-menu nav li a {
+        color: #052049; }
+        header#navbar #main-menu nav li a:hover, header#navbar #main-menu nav li a:focus {
+          background-color: rgba(255, 255, 255, 0.3); }
+        header#navbar #main-menu nav li a.dropdown {
+          padding: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 25px;
+          padding-top: 3px;
+          padding-left: 5px;
+          background-color: transparent; }
+          header#navbar #main-menu nav li a.dropdown:hover {
+            background-color: rgba(255, 255, 255, 0.3); }
+            header#navbar #main-menu nav li a.dropdown:hover .caret {
+              border-top-color: #f48022; }
+      header#navbar #main-menu nav li.active a, header#navbar #main-menu nav li.active-trail.dropdown > a {
+        color: #fff;
+        background-color: #f48022; }
+        header#navbar #main-menu nav li.active a.dropdown, header#navbar #main-menu nav li.active-trail.dropdown > a.dropdown {
+          background-color: transparent; }
+      header#navbar #main-menu nav li.active-trail a.dropdown:hover .caret {
+        border-top-color: #052049; }
+      header#navbar #main-menu nav li.expanded a:first-child {
+        padding-right: 25px; }
+      header#navbar #main-menu nav li.expanded ul.dropdown-menu {
+        background-color: rgba(255, 255, 255, 0.2); }
     header#navbar #main-menu nav > ul > li {
       border-bottom: 1px solid #fff; }
     @media (min-width: 768px) {
@@ -4224,7 +4246,7 @@ header#navbar {
           header#navbar #main-menu nav li a {
             padding-top: 5px;
             padding-bottom: 5px; }
-            header#navbar #main-menu nav li a:hover {
+            header#navbar #main-menu nav li a:hover, header#navbar #main-menu nav li a.hover {
               background-color: #dbdde0; }
           header#navbar #main-menu nav li.open a {
             background-color: #dbdde0; }
