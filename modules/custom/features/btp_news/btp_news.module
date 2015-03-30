@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BTP News feature.
+ */
+
+include_once 'btp_news.features.inc';
