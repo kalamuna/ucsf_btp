@@ -1,0 +1,14 @@
+name = BTP homepage
+core = 7.x
+package = BTP
+version = 7.x-1.0
+project = btp_homepage
+dependencies[] = fe_block
+dependencies[] = views
+dependencies[] = views_slideshow
+features[ctools][] = views:views_default:3.0
+features[fe_block_settings][] = views-slider-slider_block
+features[features_api][] = api:2
+features[views_view][] = slider
+features_exclude[dependencies][ctools] = ctools
+project path = sites/btp.josh/modules/custom/features
