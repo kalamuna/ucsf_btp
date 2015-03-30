@@ -4267,6 +4267,24 @@ header#navbar {
       border-radius: 0px;
       color: #18a3ac; }
 
+.block-menu-block {
+  margin-bottom: 2em; }
+  .block-menu-block h2 {
+    margin: 0; }
+    .block-menu-block h2 a {
+      display: block;
+      color: #4d4d4d;
+      font-size: 16px;
+      text-transform: uppercase;
+      line-height: 1.6; }
+  .block-menu-block h2 a, .block-menu-block ul.menu li a {
+    padding: 10px 20px;
+    background-color: #fff;
+    margin-bottom: 3px; }
+    .block-menu-block h2 a:hover, .block-menu-block ul.menu li a:hover {
+      background-color: #f48022;
+      color: #fff; }
+
 .main-container {
   background-color: #fff; }
   @media (min-width: 768px) {

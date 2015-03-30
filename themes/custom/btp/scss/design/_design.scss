@@ -221,6 +221,36 @@ header#navbar {
   }
 }
 
+// Second level menu block.
+.block-menu-block {
+  margin-bottom: 2em;
+
+  h2  {
+    margin: 0;
+    
+    a {
+      display: block;
+      color: $text-color;
+      font-size: $font-size-base;
+      text-transform: uppercase;
+      line-height: $line-height-base;
+    }
+  }
+  
+  h2,
+  ul.menu li {
+    a {
+      padding: 10px 20px;
+      background-color: $c-white;
+      margin-bottom: 3px;
+      
+      &:hover {
+        background-color: $c-orange;
+        color: $c-white;
+      }
+    }
+  }
+}
 
 // ! Main content
 .main-container {
