@@ -4325,13 +4325,21 @@ header#navbar {
   text-align: right; }
   #print-share-pdf li {
     display: inline-block;
-    margin-right: 20px; }
+    margin-right: 5px;
+    padding: 2px 5px;
+    font-size: 14px; }
     #print-share-pdf li.last {
       margin-right: 0; }
+    #print-share-pdf li:hover {
+      background-color: #f0f1f2; }
+      #print-share-pdf li:hover a, #print-share-pdf li:hover i {
+        color: #12797f; }
     #print-share-pdf li span {
       margin-left: 7px; }
     #print-share-pdf li i {
-      color: #18a3ac; }
+      color: #18a3ac;
+      font-size: 16px;
+      cursor: pointer; }
 
 @media (min-width: 768px) {
   #sidebar-second-wrap {

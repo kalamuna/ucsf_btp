@@ -313,10 +313,20 @@ header#navbar {
     
   li {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 5px;
+    padding: 2px 5px;
+    font-size: $font-size-base - 2;
     
     &.last {
       margin-right: 0;
+    }
+    
+    &:hover {
+      background-color: $sidebar-bg-color;
+      
+      a, i {
+        color: darken($link-color, 10);
+      }
     }
     
     span {
@@ -325,6 +335,8 @@ header#navbar {
     
     i {
       color: $link-color;
+      font-size: $font-size-base;
+      cursor: pointer;
     }
   }
 }
@@ -340,7 +352,7 @@ $logo-offset: 90px;
 
   .region-sidebar-second {
     padding: 2em;
-    background-color: $sidbar-bg-color;
+    background-color: $sidebar-bg-color;
     height: 100%; // #sidebar-second-wrap height will come from matchHeight js.
   }
   
