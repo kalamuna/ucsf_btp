@@ -19,7 +19,7 @@ function btp_homepage_default_fe_block_settings() {
     'delta' => 'slider-slider_block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => '<front>',
     'roles' => array(),
     'themes' => array(
       'bootstrap' => array(
@@ -42,7 +42,7 @@ function btp_homepage_default_fe_block_settings() {
       ),
     ),
     'title' => '<none>',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   return $export;

@@ -34,7 +34,7 @@ function btp_basic_page_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => 1,
         'theme' => 'btp',
-        'weight' => -20,
+        'weight' => -18,
       ),
       'seven' => array(
         'region' => '',
