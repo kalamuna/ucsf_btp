@@ -229,7 +229,7 @@ figure {
 img {
   vertical-align: middle; }
 
-.img-responsive, #sidebar-second-wrap .logos ul li a img {
+.img-responsive, .view-news .view-content ul li .views-field-field-image, .news-list ul li .views-field-field-image, #sidebar-second-wrap .logos ul li a img {
   display: block;
   width: 100% \9;
   max-width: 100%;
@@ -3977,15 +3977,28 @@ button.close {
       border-bottom: 2px dotted #b4b9bf; }
     .view-news .view-content ul li .views-field-field-image, .news-list ul li .views-field-field-image {
       float: left;
-      width: 27%; }
+      width: 100%;
+      height: 100px;
+      overflow: hidden;
+      margin-bottom: 10px; }
+      .view-news .view-content ul li .views-field-field-image img, .news-list ul li .views-field-field-image img {
+        width: 100%; }
     .view-news .view-content ul li .views-field-title, .news-list ul li .views-field-title {
-      float: left;
-      width: 73%;
       line-height: 1.2; }
       .view-news .view-content ul li .views-field-title a, .news-list ul li .views-field-title a {
         display: block;
         margin-top: 5px;
         color: #4d4d4d; }
+    @media (min-width: 480px) {
+      .view-news .view-content ul li .views-field-field-image, .news-list ul li .views-field-field-image {
+        width: 30%;
+        margin-right: 10px; } }
+    @media (min-width: 768px) {
+      .view-news .view-content ul li .views-field-title, .news-list ul li .views-field-title {
+        font-size: 14px; } }
+    @media (min-width: 992px) {
+      .view-news .view-content ul li .views-field-field-image, .news-list ul li .views-field-field-image {
+        margin-right: 20px; } }
 
 #home-ctas .cta a {
   display: block;
@@ -4080,13 +4093,6 @@ a:visited {
 p {
   line-height: 1.6; }
 
-.view-news {
-  position: relative; }
-  .view-news .more-link {
-    position: absolute;
-    top: -35px;
-    right: 0; }
-
 #block-views-slider-slider-block {
   margin-bottom: 30px; }
 
@@ -4153,6 +4159,11 @@ p {
 
 #home-ctas {
   margin-top: 40px; }
+
+.node-type-news .field-name-field-image {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 20px; }
 
 #page-wrap {
   background-color: #b4b9bf;
@@ -4366,6 +4377,13 @@ header#navbar {
         width: 30%; }
       #sidebar-second-wrap .logos ul li a img {
         width: 100%; }
+
+.view-news {
+  position: relative; }
+  .view-news .more-link {
+    position: absolute;
+    top: -35px;
+    right: 0; }
 
 .view-sidebar-callouts .view-content ul li:first-of-type .field-collection-item-field-btp-sidebar-callout > h2 {
   margin-top: 0; }

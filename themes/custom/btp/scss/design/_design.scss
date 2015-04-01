@@ -395,6 +395,20 @@ $logo-offset: 90px;
   }
 }
 
+.view-news {
+  position: relative;
+  
+  .view-content {
+    @extend %news-list;
+  }
+  
+  .more-link {
+    position: absolute;
+    top: -35px;
+    right: 0;
+  }
+}
+
 .not-front .field-collection-item-field-btp-sidebar-callout {
   @extend %quote-style-2;
 }
