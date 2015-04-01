@@ -228,6 +228,7 @@ header#navbar {
     position: absolute;
     bottom: 0;
     left: 0;
+    width: 100%;
 
     // Larger than sm.
     @media(min-width: $screen-sm) {
@@ -255,6 +256,7 @@ header#navbar {
       button {
         border-radius: 0px;
         color: $c-teal;
+        padding: 5.9px 12px; // Note that 5.9px fixes a rounding error in FF.
       }
     }
   }
@@ -302,6 +304,30 @@ header#navbar {
   }
 }
 
+// ! Print, Share, PDF
+#print-share-pdf {
+  @extend %reset-list;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: right;
+    
+  li {
+    display: inline-block;
+    margin-right: 20px;
+    
+    &.last {
+      margin-right: 0;
+    }
+    
+    span {
+      margin-left: 7px;
+    }
+    
+    i {
+      color: $link-color;
+    }
+  }
+}
 
 // ! Sidebar
 $logo-offset: 90px;
@@ -351,6 +377,24 @@ $logo-offset: 90px;
           span {
             @extend .sr-only;
           }
+        }
+      }
+    }
+  }
+}
+
+.not-front .field-collection-item-field-btp-sidebar-callout {
+  @extend %quote-style-2;
+}
+
+.view-sidebar-callouts {
+  .view-content {
+    ul {
+      @extend %reset-list;
+      
+      li:first-of-type {
+        .field-collection-item-field-btp-sidebar-callout > h2 {
+          margin-top: 0;
         }
       }
     }
@@ -437,24 +481,6 @@ $logo-offset: 90px;
             border: 1px solid $c-white;
             border-radius: 5px;
           }          
-        }
-      }
-    }
-  }
-}
-
-.not-front .field-collection-item-field-btp-sidebar-callout {
-  @extend %quote-style-2;
-}
-
-.view-sidebar-callouts {
-  .view-content {
-    ul {
-      @extend %reset-list;
-      
-      li:first-of-type {
-        .field-collection-item-field-btp-sidebar-callout > h2 {
-          margin-top: 0;
         }
       }
     }

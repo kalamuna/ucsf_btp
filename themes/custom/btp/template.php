@@ -44,7 +44,11 @@ function btp_preprocess_page(&$vars) {
   
   // Add the Bixby and UCSF logos into the bottom of the sidebar.
   btp_add_sidebar_logos($vars);
+  
+  // Manually add print, share and pdf links.
+  btp_print_links($vars);
 }
+
 /**
  * Add the Bixby and UCSF logos into the bottom of the sidebar
  */
@@ -95,6 +99,29 @@ function btp_add_sidebar_logos(&$vars){
       ),
     ),
   );
+}
+
+/**
+ * Add the print, share and pdf links to the page. 
+ *
+ * Note that we're doing this manually because the print module is implemented
+ * really badly and provides no easy way to customize the links.
+ */ 
+function btp_print_links(&$vars) {
+  if (isset($vars['node'])) {
+    // We are on a node page--build the links.
+    $vars['btp_print_links'] = array(
+      '#theme' => 'item_list',
+      '#attributes' => array(
+        'id' => 'print-share-pdf'
+      ),
+      '#items' => array(
+        _btp_fa_icon('print') . print_insert_link(NULL, $vars['node'], 'corner'),
+        _btp_fa_icon('envelope-o') . print_mail_insert_link(NULL, $vars['node'], 'corner'),
+        _btp_fa_icon('file-pdf-o') . print_pdf_insert_link(NULL, $vars['node'], 'corner'),
+      ),
+    );
+  }
 }
 
 /**
@@ -199,4 +226,26 @@ function btp_menu_link(array $variables) {
   }
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}
+
+// ! Helper functions
+
+/**
+ * Return markup for a fontawesome icon.
+ */
+function _btp_fa_icon($name, $extra_attributes = NULL){
+  // Set up the default FontAwesome classes.
+  $attributes = array(
+    'class' => array(
+      'fa',
+      'fa-' . $name
+    ),
+  );
+
+  // Merge any extra attributes that were passed in.
+  if ($extra_attributes) {
+    $attributes = array_merge_recursive($extra_attributes, $attributes);
+  }
+
+  return '<i ' . drupal_attributes($attributes) . '></i>';
 }
