@@ -523,3 +523,10 @@ $logo-offset: 90px;
 }
 
 
+// ! Global styles
+.field-name-field-image-caption,
+.field-name-field-image-caption p {
+  font-style: italic;
+  font-size: $font-size-base - 2;
+}
+

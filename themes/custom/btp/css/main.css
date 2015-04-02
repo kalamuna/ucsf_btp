@@ -4436,3 +4436,6 @@ header#navbar {
             border: 1px solid #fff;
             border-radius: 5px; } }
 
+.field-name-field-image-caption, .field-name-field-image-caption p {
+  font-style: italic;
+  font-size: 14px; }
