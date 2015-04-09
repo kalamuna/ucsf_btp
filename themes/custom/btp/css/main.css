@@ -4072,7 +4072,8 @@ h5, h6 {
   letter-spacing: 0.2em; }
 
 h1.page-header {
-  margin-top: 25px; }
+  margin-top: 25px;
+  color: #f78a32; }
 
 .region-sidebar-first h2, .region-sidebar-second h2 {
   color: #f48022; }
