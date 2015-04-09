@@ -157,7 +157,7 @@
         <?php if (!empty($action_links)): ?>
           <ul class="action-links"><?php print render($action_links); ?></ul>
         <?php endif; ?>
-        <?php if (!empty($btp_print_links)) print render($btp_print_links); ?>
+        <?php if (!empty($btp_print_links) && !drupal_is_front_page()) print render($btp_print_links); ?>
         <?php print render($page['content']); ?>
       </section>
   
