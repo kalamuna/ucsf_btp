@@ -14,6 +14,9 @@
   
   // Dot nav
   .flex-control-nav {
+    display: none;
+    
+/*
     li {
       a {
         width: 10px;
@@ -27,23 +30,23 @@
         }
       }
     }
+*/
   }
   
   // Prev/next
   ul.flex-direction-nav {
     position: absolute;
     bottom: 8px;
-    left: 10px;
-    right: 10px;
-    height: 60px;
+    left: 8px;
+    right: 8px;
+    height: 50px;
     background-color: rgba(55, 77, 111, 0.4);
-    
 
     li {
       position: relative;
       float: left;
       width: 25px;
-      height: 60px;
+      height: 50px;
       
       &:after {
         font-family: "FontAwesome";
@@ -52,7 +55,7 @@
         color: $c-white;
         display: block;
         position: absolute;
-        top: 12px;
+        top: 8px;
         left: 0;
         bottom: 0;
         right: 0;
@@ -71,7 +74,7 @@
       }
      
       a {
-        top: 12px;
+        top: 10px;
         left: 0;
         background-image: none;
         color: $c-white;
@@ -86,10 +89,10 @@
       
       .views-field-field-link {
         position: absolute;
-        bottom: 18px;
+        bottom: 12px;
         right: 60px;
         z-index: 10;
-        @extend %h4;
+        font-size: 24px;
         
         a {
           color: $c-white;
