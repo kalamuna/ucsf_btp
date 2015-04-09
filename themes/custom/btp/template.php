@@ -82,6 +82,13 @@ function btp_add_sidebar_logos(&$vars){
     'html' => TRUE,
     'external' => TRUE,
   ));
+
+  // If no blocks are in this region on this particular page then the region 
+  // doesn't get it's regular treatment so we're adding it in here.  
+  if (empty($vars['page']['sidebar_second'])) {
+    $vars['page']['sidebar_second']['#theme_wrappers'] = array('region');
+    $vars['page']['sidebar_second']['#region'] = 'sidebar_second';
+  }
   
   $vars['page']['sidebar_second']['logos'] = array(
     '#prefix' => '<div class="logos">',
