@@ -404,6 +404,11 @@ $logo-offset: 90px;
     position: absolute;
     top: -35px;
     right: 0;
+
+    @media(min-width: $screen-sm) and (max-width: $screen-md) {
+      position: static;
+      text-align: right;
+    }
   }
 }
 

@@ -4397,6 +4397,10 @@ header#navbar {
     position: absolute;
     top: -35px;
     right: 0; }
+    @media (min-width: 768px) and (max-width: 992px) {
+      .view-news .more-link {
+        position: static;
+        text-align: right; } }
 
 .view-sidebar-callouts .view-content ul li:first-of-type .field-collection-item-field-btp-sidebar-callout > h2 {
   margin-top: 0; }
