@@ -5,3 +5,19 @@
     margin-bottom: 20px;
   }
 }
+
+// /news page.
+.view-news.view-display-id-page {
+  .view-content {
+    .views-field-created {
+      font-style: italic;
+      color: lighten($text-color, 20);
+    }
+    .views-field-field-image {
+      width: auto;
+      height: auto;
+      float: right;
+      margin: 0px 0px 20px 20px;
+    }
+  }
+}

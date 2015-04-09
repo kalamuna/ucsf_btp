@@ -4175,6 +4175,15 @@ p {
   margin-right: 30px;
   margin-bottom: 20px; }
 
+.view-news.view-display-id-page .view-content .views-field-created {
+  font-style: italic;
+  color: gray; }
+.view-news.view-display-id-page .view-content .views-field-field-image {
+  width: auto;
+  height: auto;
+  float: right;
+  margin: 0px 0px 20px 20px; }
+
 #page-wrap {
   background-color: #b4b9bf;
   position: relative; }
@@ -4412,7 +4421,8 @@ header#navbar {
     .region-footer #block-ucsftemplate-tweaks-footer-contact h2 {
       font-size: 14px;
       font-weight: 700;
-      text-align: center; }
+      text-align: center;
+      line-height: 1.6; }
       @media (min-width: 768px) {
         .region-footer #block-ucsftemplate-tweaks-footer-contact h2 {
           margin-top: 0;

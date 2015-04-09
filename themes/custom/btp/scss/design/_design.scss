@@ -445,6 +445,7 @@ $logo-offset: 90px;
       font-size: $font-size-base - 2;
       font-weight: 700;
       text-align: center;
+      line-height: $line-height-base;
       
       // Larger than xs.
       @media(min-width: $screen-sm) {
