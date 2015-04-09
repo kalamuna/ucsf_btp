@@ -4351,6 +4351,8 @@ header#navbar {
     .main-container {
       position: relative;
       top: -30px; } }
+  .main-container .region-content {
+    padding-bottom: 40px; }
 
 #print-share-pdf {
   margin-top: 10px;

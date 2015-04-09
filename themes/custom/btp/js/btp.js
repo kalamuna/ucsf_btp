@@ -12,6 +12,7 @@
    */
   btp.initialize = function(context, settings){
     btp.menuHoverfix();
+    btp.columnHeights();
   };
 
   // Makes sure onresize doesnt get called too frequently
@@ -34,11 +35,18 @@
 
   btp.onResize = btp.debounce( function(){
   }, 30 );
+
+  /**
+   * Run matchHeight on the main layout columns.
+   */
+  btp.columnHeights = function(){
+    $('#main-content-wrap, sidebar-first-wrap, #sidebar-second-wrap').matchHeight();
+  };
   
   /**
    * Show dropdown menu on hover but only for layouts larger than sm.
    */
-  btp.menuHoverfix = function(context, settings){
+  btp.menuHoverfix = function(){
     var dropdown = $('#navbar ul.navbar-nav li.expanded');
 
     $('#navbar ul.navbar-nav li.expanded').on({

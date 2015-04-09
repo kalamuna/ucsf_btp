@@ -300,6 +300,10 @@ header#navbar {
     position: relative;
     top: $content-offset;
   }
+  
+  .region-content {
+    padding-bottom: 40px;
+  }
 }
 
 // ! Print, Share, PDF
