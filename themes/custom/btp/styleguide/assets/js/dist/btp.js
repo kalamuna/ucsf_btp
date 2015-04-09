@@ -586,10 +586,11 @@
   }, 30 );
   
   /**
-   * Hovering over the drop down caret stops the hover on the main anchor with the stlying
+   * Hovering over the drop down caret stops the hover on the text anchor so we 
+   * need to manually add a class for styling 
    */
   btp.menuHoverfix = function(context, settings){
-    $('#navbar ul.navbar-nav li.expanded a.dropdown').on({
+    $('#navbar ul.navbar-nav li.expanded a').on({
       mouseenter: menuHoverToggle,
       mouseleave: menuHoverToggle,
     });
@@ -599,7 +600,10 @@
    * 
    */
   function menuHoverToggle(e){
+    // Add a class to the anchor siblings with a data-target attribute.
     $(this).siblings('a[data-target]').toggleClass('hover');
+    
+    $(this).closest('li').toggleClass('open');
   }
 
 })( window.btp = window.btp || {}, jQuery, window, undefined );

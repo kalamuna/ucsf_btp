@@ -36,20 +36,25 @@
   }, 30 );
   
   /**
-   * Hovering over the drop down caret stops the hover on the main anchor with the stlying
+   * Show dropdown menu on hover but only for layouts larger than sm.
    */
   btp.menuHoverfix = function(context, settings){
-    $('#navbar ul.navbar-nav li.expanded a.dropdown').on({
+    var dropdown = $('#navbar ul.navbar-nav li.expanded');
+
+    $('#navbar ul.navbar-nav li.expanded').on({
       mouseenter: menuHoverToggle,
       mouseleave: menuHoverToggle,
     });
   };
   
   /**
-   * 
+   * Show dropdown menu on hover but only for layouts larger than sm.
    */
   function menuHoverToggle(e){
-    $(this).siblings('a[data-target]').toggleClass('hover');
+    var mq = window.matchMedia( "(min-width: 768px)" );
+    if (mq.matches) {
+      $(this).closest('li').toggleClass('open');
+    }
   }
 
 })( window.btp = window.btp || {}, jQuery, window, undefined );

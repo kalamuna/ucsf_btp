@@ -4225,24 +4225,27 @@ header#navbar {
         header#navbar #main-menu nav li a.dropdown {
           padding: 0;
           position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
+          top: 10px;
+          right: 10px;
+          bottom: 10px;
           width: 25px;
-          padding-top: 3px;
+          height: 25px;
           padding-left: 5px;
+          border: 1px solid #fff;
+          border-radius: 3px;
           background-color: transparent; }
           header#navbar #main-menu nav li a.dropdown:hover {
-            background-color: rgba(255, 255, 255, 0.3); }
-            header#navbar #main-menu nav li a.dropdown:hover .caret {
-              border-top-color: #f48022; }
-      header#navbar #main-menu nav li.active a, header#navbar #main-menu nav li.active-trail.dropdown > a {
-        color: #fff;
+            background-color: transparent; }
+          header#navbar #main-menu nav li a.dropdown .caret {
+            position: relative;
+            top: -2px; }
+      header#navbar #main-menu nav li.active, header#navbar #main-menu nav li.active-trail {
         background-color: #f48022; }
-        header#navbar #main-menu nav li.active a.dropdown, header#navbar #main-menu nav li.active-trail.dropdown > a.dropdown {
-          background-color: transparent; }
-      header#navbar #main-menu nav li.active-trail a.dropdown:hover .caret {
-        border-top-color: #052049; }
+        header#navbar #main-menu nav li.active a, header#navbar #main-menu nav li.active > a, header#navbar #main-menu nav li.active-trail a, header#navbar #main-menu nav li.active-trail > a {
+          background: transparent;
+          color: #fff; }
+          header#navbar #main-menu nav li.active a.dropdown, header#navbar #main-menu nav li.active > a.dropdown, header#navbar #main-menu nav li.active-trail a.dropdown, header#navbar #main-menu nav li.active-trail > a.dropdown {
+            background-color: transparent !important; }
       header#navbar #main-menu nav li.expanded a:first-child {
         padding-right: 25px; }
       header#navbar #main-menu nav li.expanded ul.dropdown-menu {
@@ -4260,17 +4263,17 @@ header#navbar {
           header#navbar #main-menu nav li a {
             padding-top: 5px;
             padding-bottom: 5px; }
-            header#navbar #main-menu nav li a:hover, header#navbar #main-menu nav li a.hover {
+            header#navbar #main-menu nav li a:hover {
               background-color: #dbdde0; }
-          header#navbar #main-menu nav li.open a {
-            background-color: #dbdde0; }
+            header#navbar #main-menu nav li a.dropdown {
+              border: none;
+              top: 5px;
+              right: 0; }
           header#navbar #main-menu nav li.open .dropdown-menu a:hover {
             background-color: rgba(255, 255, 255, 0.2); }
           header#navbar #main-menu nav li.active-trail > a, header#navbar #main-menu nav li a.active {
             background-color: #f48022;
             color: #fff !important; }
-            header#navbar #main-menu nav li.active-trail > a:hover, header#navbar #main-menu nav li a.active:hover {
-              background-color: rgba(244, 128, 34, 0.9) !important; }
           header#navbar #main-menu nav li.expanded ul.dropdown-menu {
             background-color: #dbdde0; }
             header#navbar #main-menu nav li.expanded ul.dropdown-menu li {

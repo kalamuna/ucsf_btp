@@ -94,39 +94,38 @@ header#navbar {
           &.dropdown {
             padding: 0;
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
+            top: 10px;
+            right: 10px;
+            bottom: 10px;
             width: 25px;
-            padding-top: 3px;
+            height: 25px;
             padding-left: 5px;
+            border: 1px solid $c-white; 
+            border-radius: 3px;           
             background-color: transparent;
             
             &:hover {
-              background-color: rgba(255,255,255,0.3);
-              
-              .caret {
-                border-top-color: $c-orange;
-              }
+              background-color: transparent;
+            }
+            
+            .caret {
+              position: relative;
+              top: -2px;
             }
           }
         }
 
-        &.active a,
-        &.active-trail.dropdown > a {
-          color: $c-white;
+        &.active,
+        &.active-trail {
           background-color: $c-orange;
-          
-          &.dropdown {
-            background-color: transparent;
-          }
-        }
-        
-        // Make sure active carets get a hover color. 
-        &.active-trail {  
-          a.dropdown:hover {
-            .caret {
-              border-top-color: $menu-text-color;
+
+          a,
+          > a {
+            background: transparent;
+            color: $c-white;
+            
+            &.dropdown {
+              background-color: transparent !important;
             }
           }
         }
@@ -163,14 +162,15 @@ header#navbar {
             padding-top: 5px;
             padding-bottom: 5px; 
             
-            &:hover,
-            &.hover { // In some circumstances js is adding this class.
+            &:hover {
               background-color: $menu-color;
-            }           
-          }
-          
-          &.open a {
-            background-color: $menu-color;
+            } 
+            
+            &.dropdown {
+              border: none;
+              top: 5px;;
+              right: 0;
+            }
           }
 
           &.open .dropdown-menu a:hover {            
@@ -181,10 +181,6 @@ header#navbar {
           a.active {
             background-color: $c-orange;
             color: $c-white !important;
-            
-            &:hover {
-              background-color: rgba(244, 128, 34, 0.9) !important;
-            }
           }
           
           &.expanded {

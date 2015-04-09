@@ -30,7 +30,7 @@ function btp_preprocess_page(&$vars) {
   // For some reason the navbar has a container class which conflicts with the
   // div directly inside it which also has a container class. Let's remove it.
   foreach ($vars['navbar_classes_array'] as $i => $val) {
-    if ($val== 'container') {
+    if ($val == 'container') {
       unset($vars['navbar_classes_array'][$i]);
     }
   }
