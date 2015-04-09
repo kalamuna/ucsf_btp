@@ -137,6 +137,8 @@ header#navbar {
           }
           
           ul.dropdown-menu {
+            padding-top: 0;
+            border-top: none;
             background-color: rgba(255,255,255,0.2);
           }
         }
@@ -188,10 +190,10 @@ header#navbar {
               background-color: $menu-color;
               
               li {
-                border-bottom: 1px solid $c-white;
+                border-top: 1px solid $c-white;
                 
                 &:last-child {
-                  border: none;
+                  //border: none;
                 } 
                 
                 a {

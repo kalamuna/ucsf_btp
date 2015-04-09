@@ -4249,6 +4249,8 @@ header#navbar {
       header#navbar #main-menu nav li.expanded a:first-child {
         padding-right: 25px; }
       header#navbar #main-menu nav li.expanded ul.dropdown-menu {
+        padding-top: 0;
+        border-top: none;
         background-color: rgba(255, 255, 255, 0.2); }
     header#navbar #main-menu nav > ul > li {
       border-bottom: 1px solid #fff; }
@@ -4277,9 +4279,7 @@ header#navbar {
           header#navbar #main-menu nav li.expanded ul.dropdown-menu {
             background-color: #dbdde0; }
             header#navbar #main-menu nav li.expanded ul.dropdown-menu li {
-              border-bottom: 1px solid #fff; }
-              header#navbar #main-menu nav li.expanded ul.dropdown-menu li:last-child {
-                border: none; }
+              border-top: 1px solid #fff; }
               header#navbar #main-menu nav li.expanded ul.dropdown-menu li a {
                 color: #18a3ac; } }
     @media (min-width: 768px) and (max-width: 992px) {
